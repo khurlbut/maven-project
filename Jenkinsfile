@@ -19,6 +19,7 @@ pipeline {
 			steps {
 				sh 'echo PATH=$PATH'
 				sh 'whoami'
+				sh 'pwd'
 				sh 'mvn clean package'
 			}
 			post {

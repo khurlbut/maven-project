@@ -33,7 +33,7 @@ pipeline {
 
 				stage('Deploy to Staging') {
 					steps {
-						sh 'scp /Users/ke015t7/Documents/learning/jenkinspipeline/tomcat-demo.pem **/target/*.war ec2-user@${params.tomcat_staging}:/var/tomcat8/webapps'
+						sh "scp /Users/ke015t7/Documents/learning/jenkinspipeline/tomcat-demo.pem **/target/*.war ec2-user@${params.tomcat_staging}:/var/tomcat8/webapps"
 					}
 				}
 

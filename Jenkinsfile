@@ -6,8 +6,8 @@ pipeline {
   	}
 
   	parameters {
-  		string(name: 'tomcat-staging', defaultValue: '18.191.99.142', description: 'Staging Server')
-  		string(name: 'tomcat-production', defaultValue: '18.191.99.142', description: 'Production Server')
+  		string(name: 'tomcat_staging', defaultValue: '18.191.99.142', description: 'Staging Server')
+  		string(name: 'tomcat_production', defaultValue: '18.191.99.142', description: 'Production Server')
   	}
 
   	triggers {
@@ -33,7 +33,7 @@ pipeline {
 
 				stage('Deploy to Staging') {
 					steps {
-						sh 'scp /Users/ke015t7/Documents/learning/jenkinspipeline/tomcat-demo.pem **/target/*.war ec2-user@${params.tomcat-staging}:/var/tomcat8/webapps'
+						sh 'scp /Users/ke015t7/Documents/learning/jenkinspipeline/tomcat-demo.pem **/target/*.war ec2-user@${params.tomcat_staging}:/var/tomcat8/webapps'
 					}
 				}
 
@@ -43,7 +43,7 @@ pipeline {
 							input message:'Approve PRODUCTION Deployment?'
 						}
 
-						sh 'scp /Users/ke015t7/Documents/learning/jenkinspipeline/tomcat-demo.pem **/target/*.war ec2-user@${params.tomcat-production}:/var/tomcat8/webapps'
+						sh 'scp /Users/ke015t7/Documents/learning/jenkinspipeline/tomcat-demo.pem **/target/*.war ec2-user@${params.tomcat_production}:/var/tomcat8/webapps'
 					}
 					post {
 						success {

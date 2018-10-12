@@ -1,8 +1,10 @@
 pipeline {
 	agent any
-	environment {
-    	PATH = "/Users/ke015t7/development/apache-maven-3.5.4/bin:$PATH"
+
+	tools {
+    	maven 'localMaven'
   	}
+  	
 	stages {
 		stage('Build') {
 			steps {
@@ -40,6 +42,6 @@ pipeline {
 				}
 			}
 		}
-		
+
 	}
 }

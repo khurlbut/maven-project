@@ -44,7 +44,7 @@ pipeline {
 							input message:'Approve PRODUCTION Deployment?'
 						}
 
-						sh "scp -i /Users/Shared/Jenkins/tomcat_demo.pem **/target/*.war ec2-user@${params.tomcat_production}:/var/tomcat8/webapps"
+						sh "scp -i /Users/Shared/Jenkins/tomcat-demo.pem **/target/*.war ec2-user@${params.tomcat_production}:/var/tomcat8/webapps"
 					}
 					post {
 						success {

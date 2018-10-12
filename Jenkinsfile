@@ -34,7 +34,7 @@ pipeline {
 
 				stage('Deploy to Staging') {
 					steps {
-						sh "scp /Users/ke015t7/Documents/learning/jenkinspipeline/tomcat-demo.pem **/target/*.war ec2-user@${params.tomcat_staging}:/var/tomcat8/webapps"
+						sh "scp /Users/Shared/Jenkins/tomcat-demo.pem **/target/*.war ec2-user@${params.tomcat_staging}:/var/tomcat8/webapps"
 					}
 				}
 
@@ -44,7 +44,7 @@ pipeline {
 							input message:'Approve PRODUCTION Deployment?'
 						}
 
-						sh "scp /Users/ke015t7/Documents/learning/jenkinspipeline/tomcat_demo.pem **/target/*.war ec2-user@${params.tomcat_production}:/var/tomcat8/webapps"
+						sh "scp /Users/Shared/Jenkins/tomcat_demo.pem **/target/*.war ec2-user@${params.tomcat_production}:/var/tomcat8/webapps"
 					}
 					post {
 						success {

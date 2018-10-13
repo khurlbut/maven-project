@@ -6,7 +6,7 @@ pipeline {
   	}
 
   	parameters {
-  		string(name: 'tomcat_staging', defaultValue: '18.191.99.142', description: 'Staging Server')
+  		string(name: 'tomcat_staging', defaultValue: 'aws-tomcat-staging:', description: 'Staging Server')
   		string(name: 'tomcat_production', defaultValue: '18.191.99.142', description: 'Production Server')
   	}
 

@@ -5,7 +5,6 @@ pipeline {
 	}
 	tools {
 		maven 'localMaven'
-		docker 'autoLocalDocker'
 	}
 	stages {
 	 	stage('Build') {

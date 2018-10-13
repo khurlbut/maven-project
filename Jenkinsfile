@@ -1,5 +1,8 @@
 pipeline {
 	agent any
+	environment {
+		DOCKER="/Applications/Docker.app/Contents/Resources/bin/"
+	}
 	tools {
 		maven 'localMaven'
 		docker 'autoLocalDocker'
@@ -8,7 +11,7 @@ pipeline {
 	 	stage('Build') {
 	 		steps {
 	 			sh 'mvn clean package'
-	 			sh "docker build . -t tomcatwebapp:#{env.BUILD_ID}"
+	 			sh "$DOCKER/docker build . -t tomcatwebapp:#{env.BUILD_ID}"
 	 		}
 	 	}
 	}

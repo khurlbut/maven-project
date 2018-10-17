@@ -1,6 +1,0 @@
-rootProject.name = 'maven-project'
-include ':server'
-include ':webapp'
-
-project(':server').projectDir = "$rootDir/server" as File
-project(':webapp').projectDir = "$rootDir/webapp" as File
